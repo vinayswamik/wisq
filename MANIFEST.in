@@ -1,0 +1,2 @@
+recursive-include src/wisq/lib *
+global-exclude *.DS_Store

@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+wisq = "wisq:main"
+
+[project]
+name = "wisq"
+version = "0.0.1"
+dependencies = [
+    "bqskit",
+    "numpy",
+    "python-sat",
+    "pyzx",
+    "qiskit>=1.0",
+    "rustworkx",
+    "pennylane"
+]
+description = ""
+readme = "README.md"
+requires-python = ">=3.8"
+
+authors = [
+    { name = "Abtin Molavi", email = "amolavi@wisc.edu"},
+    { name = "Amanda Xu", email = "axu44@wisc.edu"},
+]
+keywords = [
+    "quantum circuit",
+    "quantum computing",
+    "quantum",
+    "fault tolerant quantum computing",
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
