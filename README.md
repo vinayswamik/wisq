@@ -15,7 +15,7 @@ $ pip install wisq
 
 To test the installation, try the example command:
 ```
-$ wisq circuits/3_17_13.qasm -ap 1e-10 -ot 10
+$ wisq wisq-circuits/3_17_13.qasm -ap 1e-10 -ot 10
 ```
 If everything is working properly, the tool should run for about 10 seconds before outputting a compiled result into the file ``out.json``. (See [below](#mapping-and-routing-output-format) for how to interpret this output)
 
@@ -66,7 +66,7 @@ Let's revisit the installation test command.
 
 
 ```
-wisq circuits/3_17_13.qasm -ap 1e-10 -ot 10
+wisq wisq-circuits/3_17_13.qasm -ap 1e-10 -ot 10
 ```
 
 Here, we run the default `full_ft` compiler mode with some configuration of the optimization. We set an approximation distance
@@ -76,14 +76,14 @@ of 10<sup>-10</sup> with the `-ap` flag and a timeout for the optimization pass 
 We can target a compact architecture with less routing space using the ``-arch`` flag (see also [Custom Architectures](#Custom-Architectures))
 
 ```
-$ wisq circuits/3_17_13.qasm --mode scmr -arch compact_layout
+$ wisq wisq-circuits/3_17_13.qasm --mode scmr -arch compact_layout
 ```
 
 ### Example 3: Advanced optimization configuration
 The optimization pass can also be configured with different optimization objectives and gate sets. 
 
 ```
-$ wisq circuits/3_17_13.qasm --mode opt -obj TOTAL -tg IBM -aa advanced_args.json
+$ wisq wisq-circuits/3_17_13.qasm --mode opt -obj TOTAL -tg IBM -aa advanced_args.json
 ```
 
 Here we set the optimization objective to minimize total gate with the `obj` flag and set the target gate set to the native gates on IBM machines with the `-tg` flag. 

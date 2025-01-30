@@ -261,6 +261,13 @@ def main():
     )
     args = parser.parse_args()
 
+    if not os.path.exists(args.input_path) and "wisq-circuits" in args.input_path:
+        args.input_path = os.path.join(
+            os.pardir(os.pardir(os.path.dirname(__file__))),
+            "wisq-circuits",
+            args.input_path,
+        )
+
     if args.output_path is None:
         args.output_path = f"out.{DEFAULT_EXT[args.mode]}"
 

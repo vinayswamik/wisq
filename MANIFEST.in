@@ -1,2 +1,3 @@
 recursive-include src/wisq/lib *
+recursive-include wisq-circuits
 global-exclude *.DS_Store
