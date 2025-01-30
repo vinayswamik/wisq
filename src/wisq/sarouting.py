@@ -7,7 +7,7 @@ import rustworkx as rx
 
 
 def route_gate(indexed_gate, grid_len, grid_height, msf_faces, mapping, to_remove, take_first_ms):
-    device_graph = rx.generators.grid_graph(rows=grid_len, cols=grid_height)
+    device_graph = rx.generators.grid_graph(rows=grid_height, cols=grid_len)
     device_graph.remove_nodes_from(list(to_remove))
     shortest_path_len =  2**31 - 1
     shortest_pair = None
@@ -78,7 +78,7 @@ def shortest_path(gate, mapping, grid_len, grid_height, msf_faces):
                 for vn in vertical_neighbors(mapping[gate[0]],grid_len, grid_height, omitted_edges=[])
                 for hn in horizontal_neighbors(magic_state,grid_len, grid_height, omitted_edges=[])]
     for s,t in pairs:
-        dist = rx.dijkstra_shortest_path_lengths(rx.generators.grid_graph(rows=grid_len, cols=grid_height), node=s, goal=t )[t]
+        dist = rx.dijkstra_shortest_path_lengths(rx.generators.grid_graph(rows=grid_height, cols=grid_len), node=s, goal=t )[t]
         if dist < shortest_path_len:
             shortest_path_len = dist
     return shortest_path_len
