@@ -21,7 +21,7 @@ from .pennylane_sk import PennylaneSK
 GUOQ_JAR = os.path.join(
     os.path.dirname(__file__), "lib", "GUOQ-1.0-jar-with-dependencies.jar"
 )
-RULES_DIR = os.path.join(os.path.dirname(__file__), "lib", "rules", "")
+RULES_DIR = os.path.join(os.path.dirname(__file__), "lib", "rules")
 
 
 CLIFFORDT = "CLIFFORDT"
