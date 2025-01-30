@@ -21,7 +21,7 @@ If everything is working properly, the tool should run for about 10 seconds befo
 
 
 # Developer Installation 
-To extend or modify wisq, you can clone the Github and build from the package from source. For example, using [uv](https://github.com/astral-sh/uv) for package management, this might look like:
+To extend or modify wisq, you can clone the Github repo and build from the package from source. For example, using [uv](https://github.com/astral-sh/uv) for package management, this might look like:
 
 ```
    $ git clone https://github.com/qqq-wisc/wisq.git
