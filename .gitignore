@@ -4,4 +4,4 @@ dist
 src/wisq/lib/synthetiq/data/output
 src/wisq/lib/synthetiq/data/input
 .DS_Store
-
+build

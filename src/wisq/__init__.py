@@ -11,6 +11,7 @@ from .dascot import (
 )
 from .guoq import run_guoq, print_help, CLIFFORDT, FAULT_TOLERANT_OPTIMIZATION_OBJECTIVE
 from .utils import create_scratch_dir
+from pathlib import Path
 import os
 import shutil
 import json
@@ -263,8 +264,7 @@ def main():
 
     if not os.path.exists(args.input_path) and "wisq-circuits" in args.input_path:
         args.input_path = os.path.join(
-            os.pardir(os.pardir(os.path.dirname(__file__))),
-            "wisq-circuits",
+            Path(os.path.dirname(__file__)).parent.parent.absolute(),
             args.input_path,
         )
 
