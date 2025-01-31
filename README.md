@@ -1,5 +1,5 @@
 # wisq
-**wisq** is a powerful and flexible compiler for quantum circuits. It is especially well-suited for targeting fault-tolerant devices, with a `full_ft` mode that optimizes the input circuit, then maps the circuit qubits to the architecture and routes two-qubit gates (including distillation-based T gates).
+**wisq** is a powerful and flexible compiler for quantum circuits. It is especially well-suited for targeting fault-tolerant devices using the *surface code*. The ``full_ft`` mode optimizes the input circuit, then maps the circuit qubits to the architecture and routes two-qubit gates (including distillation-based T gates). wisq also provides separate modes for each phase of ``full_ft``, which can be run in isolation for more control over the parameters. For example, the circuit optimization mode ``opt`` can handle [arbitrary gate sets](https://github.com/qqq-wisc/guoq?tab=readme-ov-file#supported-gate-sets) by invoking GUOQ [1] with [different arguments](#example-3-advanced-optimization-configuration).
 
 
 # Dependencies
@@ -8,7 +8,7 @@ wisq requires **Python** 3.8, **Java** 21 or later, and **gcc**.
 
 # Installation
 
-Once the above requirements are satisfied, the `wisq` command line tool can be painlessly installed via pip:
+Once the above requirements are satisfied, the ``wisq`` command line tool can be painlessly installed via pip:
 ```
 pip install wisq
 ``` 
@@ -34,7 +34,7 @@ uv pip install -e .
 cd src/wisq
    ```
 
-To extend or modify the circuit optimization (GUOQ/QUESO) component of wisq, you will need to clone the [GUOQ repository](https://github.com/qqq-wisc/guoq), make your changes, build, and copy the new JAR to `lib`. The Python component of GUOQ can be directly modified here in `src/wisq/resynth.py`.
+To extend or modify the circuit optimization (GUOQ [1]/QUESO [3]) component of wisq, you will need to clone the [GUOQ repository](https://github.com/qqq-wisc/guoq), make your changes, build, and copy the new JAR to ``lib``. The Python component of GUOQ can be directly modified here in ``src/wisq/resynth.py``.
 For example, the circuit optimization phase of wisq can be extended to handle new gate sets in this manner.
 
 # Usage
