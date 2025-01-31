@@ -8,7 +8,7 @@ wisq requires **Python** 3.8, **Java** 21 or later, and **gcc**.
 
 # Installation
 
-Once the above requirements are satisfied, the `wisq` command line tool can painlessly installed via pip:
+Once the above requirements are satisfied, the `wisq` command line tool can be painlessly installed via pip:
 ```
 pip install wisq
 ``` 
@@ -31,6 +31,7 @@ source .venv/bin/activate
 uv pip install build
 python -m build --sdist
 uv pip install -e .
+cd src/wisq
    ```
 
 To extend or modify the circuit optimization (GUOQ/QUESO) component of wisq, you will need to clone the [GUOQ repository](https://github.com/qqq-wisc/guoq), make your changes, build, and copy the new JAR to `lib`. The Python component of GUOQ can be directly modified here in `src/wisq/resynth.py`.
