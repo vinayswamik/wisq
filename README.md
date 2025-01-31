@@ -10,12 +10,12 @@ wisq requires **Python** 3.8, **Java** 21 or later, and **gcc**.
 
 Once the above requirements are satisfied, the `wisq` command line tool can painlessly installed via pip:
 ```
-$ pip install wisq
+pip install wisq
 ``` 
 
 To test the installation, try the example command:
 ```
-$ wisq wisq-circuits/3_17_13.qasm -ap 1e-10 -ot 10
+wisq wisq-circuits/3_17_13.qasm -ap 1e-10 -ot 10
 ```
 If everything is working properly, the tool should run for about 10 seconds before outputting a compiled result into the file ``out.json``. (See [below](#mapping-and-routing-output-format) for how to interpret this output)
 
@@ -24,13 +24,13 @@ If everything is working properly, the tool should run for about 10 seconds befo
 To extend or modify wisq, you can clone the Github repo and build from the package from source. For example, using [uv](https://github.com/astral-sh/uv) for package management, this might look like:
 
 ```
-   $ git clone https://github.com/qqq-wisc/wisq.git
-   $ cd wisq
-   $ uv venv
-   $ source .venv/bin/activate
-   $ uv pip install build
-   $ python -m build --sdist
-   $ uv pip install -e .
+git clone https://github.com/qqq-wisc/wisq.git
+cd wisq
+uv venv
+source .venv/bin/activate
+uv pip install build
+python -m build --sdist
+uv pip install -e .
    ```
 
 To extend or modify the circuit optimization (GUOQ/QUESO) component of wisq, you will need to clone the [GUOQ repository](https://github.com/qqq-wisc/guoq), make your changes, build, and copy the new JAR to `lib`. The Python component of GUOQ can be directly modified here in `src/wisq/resynth.py`.
@@ -76,14 +76,14 @@ of 10<sup>-10</sup> with the `-ap` flag and a timeout for the optimization pass 
 We can target a compact architecture with less routing space using the ``-arch`` flag (see also [Custom Architectures](#Custom-Architectures))
 
 ```
-$ wisq wisq-circuits/3_17_13.qasm --mode scmr -arch compact_layout
+wisq wisq-circuits/3_17_13.qasm --mode scmr -arch compact_layout
 ```
 
 ### Example 3: Advanced optimization configuration
 The optimization pass can also be configured with different optimization objectives and gate sets. 
 
 ```
-$ wisq wisq-circuits/3_17_13.qasm --mode opt -obj TOTAL -tg IBM -aa advanced_args.json
+wisq wisq-circuits/3_17_13.qasm --mode opt -obj TOTAL -tg IBM -aa advanced_args.json
 ```
 
 Here we set the optimization objective to minimize total gate with the `obj` flag and set the target gate set to the native gates on IBM machines with the `-tg` flag. 
