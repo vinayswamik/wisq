@@ -166,7 +166,7 @@ def run_guoq(
             if optimization_objective in ["FT", "T"] and path_to_synthetiq is None:
                 system = platform.system().lower()
                 processor = platform.processor().lower()
-                if system == "linux" and processor in ["amd"]:
+                if system == "linux" and processor in ["x86_64"]:
                     path_to_synthetiq = f"./bin/main_linux_{processor}"
                 elif system == "darwin" and processor in ["arm"]:
                     path_to_synthetiq = f"./bin/main_mac_{processor}"
