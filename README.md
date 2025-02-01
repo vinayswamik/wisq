@@ -1,5 +1,5 @@
 # wisq
-**wisq** is a powerful and flexible compiler for quantum circuits. It is especially well-suited for targeting fault-tolerant devices using the *surface code*. The ``full_ft`` mode optimizes the input circuit, then maps the circuit qubits to the architecture and routes two-qubit gates (including distillation-based T gates). wisq also provides separate modes for each phase of ``full_ft``, which can be run in isolation for more control over the parameters. For example, the circuit optimization mode ``opt`` can handle [arbitrary gate sets](https://github.com/qqq-wisc/guoq?tab=readme-ov-file#supported-gate-sets) by invoking GUOQ [1] with [different arguments](#example-3-advanced-optimization-configuration).
+**wisq** is a powerful and flexible compiler for quantum circuits. It is especially well-suited for targeting fault-tolerant devices using the *surface code*. The ``full_ft`` mode optimizes the input circuit, then maps the circuit qubits to the architecture and routes two-qubit gates (including distillation-based T gates). wisq also provides a dedicated circuit optimization mode ``opt`` that can optimize circuits over [arbitrary gate sets](https://github.com/qqq-wisc/guoq?tab=readme-ov-file#supported-gate-sets) by invoking GUOQ [1] with [different arguments](#example-3-advanced-optimization-configuration).
 
 
 # Dependencies

@@ -168,7 +168,7 @@ def run_guoq(
                 processor = platform.processor().lower()
                 if system == "linux" and processor in ["x86_64"]:
                     path_to_synthetiq = f"./bin/main_linux_{processor}"
-                elif system == "darwin" and processor in ["arm"]:
+                elif system == "darwin" and processor in ["arm", "i386"]:
                     path_to_synthetiq = f"./bin/main_mac_{processor}"
                 else:
                     print(
