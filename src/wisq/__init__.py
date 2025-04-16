@@ -202,6 +202,7 @@ def main():
         "-tg",
         help="target gateset for circuit optimization (default: Clifford + T)",
         default=CLIFFORDT,
+        choices=guoq.GATE_SETS.keys(),
     )
     opt.add_argument(
         "--optimization_objective",
